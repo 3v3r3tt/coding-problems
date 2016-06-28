@@ -1,6 +1,6 @@
 function findLargestPalindromeProduct(digits) {
   if(!digits || !parseInt(digits)){ return 'Please enter a number!'}
-  if(digits > 3){ return 'Please enter a smaller number! Unless you want to freeze up your computer'}
+  if(digits > 6){ return 'Please enter a smaller number! Unless you want to freeze up your computer'}
   var largestPalindromeProduct, bottomLimit, topLimit;
 
   bottomLimit = Math.pow(10, digits-1);
@@ -18,17 +18,17 @@ function findLargestPalindromeProduct(digits) {
   }
 
   jHistory = []
-  for(j=bottomLimit; j<topLimit; j++) {
-    for(k=bottomLimit; k<topLimit; k++){
+  for(j=topLimit; j>bottomLimit; j--) {
+    for(k=topLimit; k>bottomLimit; k--){
       if(jHistory.indexOf(k) > -1) { continue; }
       product = j*k;
       if(isPalindrome(''+product)) {
         if(!largestPalindromeProduct || product > largestPalindromeProduct) {
           largestPalindromeProduct = product;
+          return largestPalindromeProduct;
         }
       }
     }
     jHistory.push(j)
   }
-  return largestPalindromeProduct;
 }
