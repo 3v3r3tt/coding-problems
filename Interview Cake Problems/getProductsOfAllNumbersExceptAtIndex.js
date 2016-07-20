@@ -1,4 +1,4 @@
-function getProductsOfAllIntsExceptAtIndex (originalArray){
+function getProductsOfAllNumbersExceptAtIndex (originalArray){
     var modifiedArray = [];
     var productSoFar = 1;
 	for(var i=0; i<originalArray.length; i++){
@@ -15,4 +15,4 @@ function getProductsOfAllIntsExceptAtIndex (originalArray){
     return modifiedArray;
 }
 
-console.log(getProductsOfAllIntsExceptAtIndex ([1, 7, 3, 4]))
+console.log(getProductsOfAllNumbersExceptAtIndex ([1, 7, 3, 4]))
