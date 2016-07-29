@@ -1,5 +1,5 @@
 function generatePermutations(inputString) {
-  if(inputString < 2) return new Set(inputString);
+  if(inputString.length < 2) return new Set(inputString);
 
   var allCharactersExceptLast = inputString.slice(0, -1);
   var lastCharacter = inputString[inputString.length - 1];
